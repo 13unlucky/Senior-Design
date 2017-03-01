@@ -1,0 +1,81 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html ng-app="joustDash">
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <!--Bootstrap Font Awesome -->
+  <!--<link rel="stylesheet" href="css/ankle-bootstrap.css">-->
+  <link rel="stylesheet" href="css/bootstrap-custom.css">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">-->
+  <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="js/ui-bootstrap-tpls-1.2.5.min.js"></script>
+  <script src="js/angular-ui-router.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <!-- App JS -->
+  <script src="js/script.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/region.js"></script>
+  <!-- C3 D3 -->
+  <link href="css/c3.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js" charset="utf-8"></script>
+  <script src="js/c3.min.js"></script>
+  <script src="js/d3.min.js" charset="utf-8"></script>
+  <script src="js/c3-angular.min.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <!--Grid UI-->
+  <script type="text/javascript" src="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.js"></script>
+  <link href="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom CSS -->
+  <link href="css/custom.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Director (Year)',  'Rotten Tomatoes', 'IMDB'],
+      ['Alfred Hitchcock (1935)', 8.4,         7.9],
+      ['Ralph Thomas (1959)',     6.9,         6.5],
+      ['Don Sharp (1978)',        6.5,         6.4],
+      ['James Hawes (2008)',      4.4,         6.2]
+    ]);
+
+    var options = {
+      title: 'The decline of \'The 39 Steps\'',
+      vAxis: {title: 'Accumulated Rating'},
+      isStacked: true
+    };
+
+    var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+  }
+  </script>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="jquery-1.12.0.min.js"></script>
+
+</head>
+
+<body ng-controller="mainCtrl">
+
+  <!-- MAIN CONTENT AND INJECTED VIEWS -->
+  <div class="vnav">
+    <a ui-sref="home" uib-tooltip="Joust Dashboard" tooltip-placement="right" tooltip-append-to-body="true"><img src="media/joust-logo.png" class="img-responsive" onmouseover="this.src='media/joust-logo-o.png'" onmouseout="this.src='media/joust-logo.png'"/></a>
+    <a ui-sref="aircraft" uib-tooltip="Aircraft" tooltip-placement="right" tooltip-append-to-body="true"><img src="media/plane-g.png" class="img-responsive nav-pad" onmouseover="this.src='media/plane-w.png'" onmouseout="this.src='media/plane-g.png'"/></a>
+    <a ui-sref="flights" uib-tooltip="Flights" tooltip-placement="right" tooltip-append-to-body="true"><img src="media/flight-g.png" class="img-responsive nav-pad" onmouseover="this.src='media/flight-w.png'" onmouseout="this.src='media/flight-g.png'"/></a>
+    <a ui-sref="engines"  uib-tooltip="Engines" tooltip-placement="right" tooltip-append-to-body="true"><img src="media/engine-g.png" class="img-responsive nav-pad" onmouseover="this.src='media/engine-w.png'" onmouseout="this.src='media/engine-g.png'"/></a>
+  </div>
+  <div id="main" ui-view="main">
+  </div>
+  <!-- angular templating -->
+  <!-- this is where content will be injected -->
+
+</body>
+</html>

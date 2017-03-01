@@ -1,0 +1,139 @@
+<!-- home-main.html -->
+<div class="col-md-12">
+  <h1>Home</h1>
+</div>
+<div class="container-fluid text-center">
+  <div class="row">
+    <div class="col-md-4">
+      <div ng-controller="engineStatusPieCtrl">
+        <div id="engineStatusPieContainer" style="min-width: 310px; height: 300px; margin: 0 auto"></div>
+      </div>
+    </div>
+    <div class="col-md-8">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 text-center">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h4 class="noMargin"><strong>Fuel Cost Loss</strong></h4>
+        </div>
+        <div class="panel-body">
+          <h1><span class="label label-danger"><strong>$16,024.49</strong></span></h1>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><strong>Live Fuel Cost</strong></div>
+        <div ng-controller="liveCostCtrl">
+          <div id="liveCostContainer" style="min-width: 310px; height: 300px; margin: 0 auto"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><strong>Engine Watchlist</strong></div>
+
+        <div ng-controller="watchlistCtrl" style="height: 300px">
+          <table st-table="rowCollection" class="table table-striped">
+            <thead>
+              <tr>
+                <th><center>Tail Number</center></th>
+                <th><center>Model</center></th>
+                <th><center>Issue</center></th>
+                <th><center>Last Update</center></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="row in rowCollection">
+                <td>{{row.tail_num}}</td>
+                <td>{{row.model}}</td>
+                <td>{{row.issue}}</td>
+                <td>{{row.last_update}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2">
+
+    </div>
+    <div class="col-sm-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><strong>Flight fuel usage</strong></div>
+        <div class="panel-body">
+          <div ng-controller="flightGraphCtrl">
+            <div id="flightGraphContainer" style="min-width: 310px; height: 400px; margin: 0 auto">Placeholder for chart</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><strong>Scheduled Maintenance</strong></div>
+        <div ng-controller="maintenanceCtrl" style="height: 400px">
+          <table st-table="rowCollection" class="table table-striped">
+            <thead>
+              <tr>
+                <th><center>Tail Number</center></th>
+                <th><center>Model</center></th>
+                <th><center>Days Remaining</center></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="row in rowCollection">
+                <td>{{row.tail_num}}</td>
+                <td>{{row.model}}</td>
+                <td>{{row.remaining_days}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+
+    </div>
+    <div class="col-sm-4">
+      <div class=" panel panel-primary">
+        <div class="panel-heading"><strong>Fleet Availability</strong></div>
+        <div class="panel-body">
+          <div class="widthDonut">
+            <c3chart bindto-id="donut-plot1-chart">
+              <chart-column column-id="Available"
+              column-color="green"
+              column-values="970"
+              column-type="donut"/>
+              <chart-column column-id="Delayed"
+              column-color="yellow"
+              column-values="20"
+              column-type="donut"/>
+              <chart-column column-id="Cancelled"
+              column-color="red"
+              column-values="10"
+              column-type="donut"/>
+              <chart-donut title="" width="60"/>
+            </c3chart>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+    </div>
+  </div>
+</div>

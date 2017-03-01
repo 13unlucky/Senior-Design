@@ -1,0 +1,148 @@
+<!-- home.html -->
+
+<div class="container-fluid text-center">
+  <div class="row">
+    <div class="col-sm-2" ng-style="{'background-color': '#fc0000'}">
+      <h3>Fleet breakdown</h3>
+      <c3chart bindto-id="chart4">
+        <chart-column column-id="data 1"
+        column-name="Engine 1"
+        column-color="red"
+        column-values="130,20,21,24,22,15"
+        column-type="spline"/>
+        <chart-column column-id="data 2"
+        column-name="Engine 2"
+        column-color="blue"
+        column-values="127,21,20,23,27,11"
+        column-type="spline"/>
+        <chart-column column-id="data 3"
+        column-name="Engine 3"
+        column-color="green"
+        column-values="190,20,28,37,26,13"
+        column-type="spline"/>
+        <chart-column column-id="data 4"
+        column-name="Engine 4"
+        column-color="black"
+        column-values="135,20,20,21,22,20"
+        column-type="spline"/>
+      </c3chart>
+      <h3>Aircraft fuel usage</h3>
+      <c3chart bindto-id="chart" sort-data="desc">
+        <chart-size chart-width="300" chart-height="300"/>
+        <chart-column column-id="Grounded flights"
+        column-values="35"
+        column-type="pie"/>
+        <chart-column column-id="Flights in the air"
+        column-values="60"
+        column-type="pie"/>
+        <chart-column column-id="Fights in maintenance"
+        column-values="15"
+        column-type="pie"/>
+        <chart-pie expand="true" show-label="true" threshold-label="0.0"/>
+      </c3chart>
+    </div>
+
+    <div class="col-sm-5">
+      <h2>Engine Watchlist</h2>
+      <div ng-controller="watchlistCtrl">
+        <table st-table="rowCollection" class="table table-striped">
+          <thead>
+            <tr>
+              <th><center>Tail Number</center></th>
+              <th><center>Model</center></th>
+              <th><center>Issue</center></th>
+              <th><center>Last Update</center></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="row in rowCollection">
+              <td>{{row.tail_num}}</td>
+              <td>{{row.model}}</td>
+              <td>{{row.issue}}</td>
+              <td>{{row.last_update}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+
+    <div class="col-sm-3">
+      <h3>Scheduled Maintenance</h3>
+      <div ng-controller="maintenanceCtrl">
+        <table st-table="rowCollection" class="table table-striped">
+          <thead>
+            <tr>
+              <th>Tail Number</th>
+              <th>Model</th>
+              <th><center>Days Remaining</center></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="row in rowCollection">
+              <td>{{row.tail_num}}</td>
+              <td>{{row.model}}</td>
+              <td>{{row.remaining_days}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4">
+      <h2>Fleet breakdown</h2>
+    </div>
+    <div class="col-sm-4">
+      <h3>Aircraft fuel usage</h3>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4" id="chart">
+      <c3chart bindto-id="chart" sort-data="desc">
+        <chart-size chart-width="300" chart-height="300"/>
+        <chart-column column-id="Grounded flights"
+        column-values="35"
+        column-type="pie"/>
+        <chart-column column-id="Flights in the air"
+        column-values="60"
+        column-type="pie"/>
+        <chart-column column-id="Fights in maintenance"
+        column-values="15"
+        column-type="pie"/>
+        <chart-pie expand="true" show-label="true" threshold-label="0.0"/>
+      </c3chart>
+    </div>
+    <div class="col-sm-4" id="chart2">
+      <c3chart bindto-id="chart4">
+        <chart-column column-id="data 1"
+        column-name="Engine 1"
+        column-color="red"
+        column-values="130,20,21,24,22,15"
+        column-type="spline"/>
+        <chart-column column-id="data 2"
+        column-name="Engine 2"
+        column-color="blue"
+        column-values="127,21,20,23,27,11"
+        column-type="spline"/>
+        <chart-column column-id="data 3"
+        column-name="Engine 3"
+        column-color="green"
+        column-values="190,20,28,37,26,13"
+        column-type="spline"/>
+        <chart-column column-id="data 4"
+        column-name="Engine 4"
+        column-color="black"
+        column-values="135,20,20,21,22,20"
+        column-type="spline"/>
+      </c3chart>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>

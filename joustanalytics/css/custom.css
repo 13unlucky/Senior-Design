@@ -1,0 +1,55 @@
+#craftPic {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.vnav {
+  background-color: #2C3E50;
+  height: 100vh;
+  padding: 15px;
+  width: 70px;
+  position: fixed;
+
+}
+
+.vnav a {
+  outline: 0;
+}
+
+#main {
+  padding-left: 70px;
+  padding-top: 15px;
+
+}
+
+#engineGrid {
+  height: 164px;
+}
+
+.nav-pad {
+  margin-top: 15px;
+}
+
+.widthDonut {
+  width: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.widthWatchlist {
+  width: 100%;
+}
+
+.grid {
+  height: 90vh;
+}
+
+.ui-grid-row:nth-child(odd):hover .ui-grid-cell{background:#BAE3F2}
+.ui-grid-row:nth-child(even):hover .ui-grid-cell{background:#BAE3F2}
+
+.noMargin {
+  margin-top: 0;
+  margin-bottom: 0;
+}

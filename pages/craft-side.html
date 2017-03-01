@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12" ng-controller="craftCtrl">
+      <div class="panel panel-info">
+        <div class="panel-heading">Details</div>
+        <div class="panel-body">
+          <table class="table table-striped">
+            <tr>
+              <th>Manufacturer</th>
+              <td>{{craftData[0].manufacturer}}</td>
+            </tr>
+            <tr>
+              <th>Model</th>
+              <td>{{craftData[0].model}}</td>
+            </tr>
+            <tr>
+              <th>Location</th>
+              <td>{{craftData[0].location}}</td>
+            </tr>
+            <tr>
+              <th>Last Update</th>
+              <td>{{craftData[0].last_update}}</td>
+            </tr>
+            <tr>
+              <th>Engine Manufacturer</th>
+              <td>{{engineCollection[0].manufacturer}}</td>
+            </tr>
+            <tr>
+              <th>Engine Model</th>
+              <td>{{engineCollection[0].model}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-info">
+        <div class="panel-heading">Engines</div>
+          <table class="table">
+            <tr>
+              <th>Engine Manufacturer</th>
+              <td>{{engineCollection[0].manufacturer}}</td>
+            </tr>
+            <tr>
+              <th>Engine Model</th>
+              <td>{{engineCollection[0].model}}</td>
+            </tr>
+            </table>
+          <table class="table table-striped">
+            <tr>
+              <th></th>
+              <th>Serial #</th>
+              <th>Watch List</th>
+            </tr>
+            <tr ng-repeat="engine in engineCollection">
+              <th>Engine {{$index + 1}}</th>
+              <td>{{engine.serial_num}}</td>
+              <td>{{engine.watch_list}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

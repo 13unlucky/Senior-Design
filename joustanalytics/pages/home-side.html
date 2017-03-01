@@ -1,0 +1,108 @@
+<!-- home-main.html -->
+
+<div class="container-fluid text-center" ng-style="{'background-color': '#E7E7E7'}">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <h3>Fleet breakdown</h3>
+      <c3chart bindto-id="chart4" enable-zoom="true">
+        <chart-column column-id="data 1"
+        column-name="Engine 1"
+        column-color="red"
+        column-values="130,20,21,24,22,15"
+        column-type="spline"/>
+        <chart-column column-id="data 2"
+        column-name="Engine 2"
+        column-color="blue"
+        column-values="127,21,20,23,27,11"
+        column-type="spline"/>
+        <chart-column column-id="data 3"
+        column-name="Engine 3"
+        column-color="green"
+        column-values="190,20,28,37,26,13"
+        column-type="spline"/>
+        <chart-column column-id="data 4"
+        column-name="Engine 4"
+        column-color="black"
+        column-values="135,20,20,21,22,20"
+        column-type="spline"/>
+      </c3chart>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <h3>Aircraft fuel usage</h3>
+      <c3chart bindto-id="chart" sort-data="desc">
+        <chart-size chart-width="300" chart-height="300"/>
+        <chart-column column-id="Grounded flights"
+        column-values="35"
+        column-type="pie"/>
+        <chart-column column-id="Flights in the air"
+        column-values="60"
+        column-type="pie"/>
+        <chart-column column-id="Fights in maintenance"
+        column-values="15"
+        column-type="pie"/>
+        <chart-pie expand="true" show-label="true" threshold-label="0.0"/>
+      </c3chart>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <c3chart bindto-id="chart5" show-labels="false" show-subchart="true" enable-zoom="true">
+        <chart-column column-id="x"
+        column-values="period 10,period 20,period 30,period 40,period 50,period 60"/>
+        <chart-column column-id="data1"
+        column-name="Data 1"
+        column-color="red"
+        column-values="30,200,100,400,150,250"
+        column-type="spline"/>
+        <chart-column column-id="data2"
+        column-name="Data 2"
+        column-color="green"
+        column-values="50,20,10,40,15,25"
+        column-type="line"/>
+        <chart-column column-id="data3"
+        column-name="Data 3"
+        column-color="#000000"
+        column-values="150,20,100,70,85,215"
+        column-type="spline"/>
+
+        <!-- values for y and y2 can be comma seperated list of items, so no commas is label -->
+        <chart-axes values-x="x" y="data1,data3" y2="data2"/>
+
+
+        <chart-axis>
+          <chart-axis-x axis-position="outer-center"
+          axis-label="Number by 10"
+          axis-type="category">
+          <chart-axis-x-tick tick-count="6"
+          tick-culling="4"
+          tick-fit="false"
+          tick-rotate="50"/>
+        </chart-axis-x>
+        <chart-axis-y axis-id="y"
+        axis-position="outer-right"
+        axis-label="Higher numbers"
+        padding-top="100"
+        padding-bottom="0"
+        range-min="0"/>
+        <chart-axis-y axis-id="y2"
+        axis-position="outer-right"
+        axis-label="Lower numbers"
+        padding-top="10"
+        padding-bottom="0"
+        range-max="100"
+        range-min="0"/>
+      </chart-axis>
+      <chart-grid show-x="false" show-y="true">
+        <chart-grid-optional axis-id="y" grid-value="200" grid-text="Value on the y"/>
+        <chart-grid-optional axis-id="y2" grid-value="40" grid-text="Value on the y2"/>
+      </chart-grid>
+    </c3chart>
+  </div>
+</div>
+
+</div>

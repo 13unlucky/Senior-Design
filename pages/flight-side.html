@@ -1,0 +1,87 @@
+<div class="container-fluid" ng-controller="flightCtrl">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-info">
+        <div class="panel-heading">Details</div>
+        <div class="panel-body">
+          <table class="table table-condensed table-striped">
+            <tr>
+              <th>Manufacturer</th>
+              <td>{{flightData[0].Aircraft_tail_num}}</td>
+            </tr>
+            <tr>
+              <th>Start Airport</th>
+              <td>{{flightData[0].start_airport}}</td>
+            </tr>
+            <tr>
+              <th>Start Time</th>
+              <td>{{flightData[0].start_dt}}</td>
+            </tr>
+            <tr>
+              <th>End Airport</th>
+              <td>{{flightData[0].end_airport}}</td>
+            </tr>
+            <tr>
+              <th>End Time</th>
+              <td>{{flightData[0].end_dt}}</td>
+            </tr>
+            <tr>
+              <th>Duration</th>
+              <td>{{flightData[0].duration}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-info">
+        <div class="panel-heading">Engines</div>
+        <div class="panel-body">
+          <table class="table table-condensed table-striped">
+            <tr>
+              <th></th>
+              <th>Serial #</th>
+              <th>Watch List</th>
+
+            </tr>
+            <tr>
+              <th>Engine 1</th>
+              <td>{{flightData[0].Engine_serial_num1}}</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <th>Engine 2</th>
+              <td>{{flightData[0].Engine_serial_num2}}</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <th>Engine 3</th>
+              <td>{{flightData[0].Engine_serial_num3}}</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <th>Engine 4</th>
+              <td>{{flightData[0].Engine_serial_num4}}</td>
+              <td>0</td>
+            </tr>
+          </table>
+          <table class="table table-condensed">
+            <tr>
+              <th>Cruise Fuel Rate</th>
+              <td>{{flightData[0].cruise_fuel_rate}}</td>
+              <th>Cruise Duration</th>
+              <td>{{flightData[0].cruise_duration}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-md-12 panel panel-default">
+  <div class="panel-body">
+  <img src="https://maps.googleapis.com/maps/api/staticmap?maptype=satellite&size=500x500&path=color:0xff0000ff|weight:5|40.639801,25.2528|73.7789002,55.364399&key=AIzaSyC8NQC7cS9vM4Np8P1jPfDDyasS0plVbc4" class="img-thumbnail img-responsive">
+  </div>
+  </div> -->
+</div>

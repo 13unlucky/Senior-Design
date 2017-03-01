@@ -1,0 +1,65 @@
+<div class="container-fluid" ng-controller="craftCtrl">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <strong>Aircraft Info</strong>
+        </div>
+        <table class="table table-striped table-hover">
+          <tr>
+            <th>Manufacturer</th>
+            <td>{{craftData[0].manufacturer}}</td>
+          </tr>
+          <tr>
+            <th>Model</th>
+            <td>{{craftData[0].model}}</td>
+          </tr>
+          <tr>
+            <th>Location</th>
+            <td>{{craftData[0].location}}</td>
+          </tr>
+          <tr>
+            <th>Last Update</th>
+            <td>{{craftData[0].last_update}}</td>
+          </tr>
+          <tr>
+            <th>Fuel Spec</th>
+            <td>{{engineCollection[0].fuel_spec}}</td>
+          </tr>
+          </table>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">Engine Info</div>
+          <table class="table table-striped">
+            <tr>
+              <th>Manufacturer</th>
+              <td>{{engineGrid.data[0].manufacturer}}</td>
+            </tr>
+            <tr>
+              <th>Model</th>
+              <td>{{engineGrid.data[0].model}}</td>
+            </tr>
+          </table>
+          <div ui-grid="engineGrid" id="engineGrid" ui-grid-selection></div>
+        </div>
+    </div>
+    <div class="col-md-10">
+      <h2>Aircraft {{craftData[0].tail_num}}</h2>
+      <div class="row">
+      <div class="col-md-4 text-center">
+        <h4 class="noMargin"><strong>Fuel Cost Loss</strong></h4>
+        <h1><span class="label label-danger"><strong>$16,024.49</strong></span></h1>
+      </div>
+      <div class="col-md-4 text-center">
+        <h4 class="noMargin"><strong>Best Engine</strong></h4>
+        <h1><span class="label label-success"><strong>Engine 1</strong></span></h1>
+      </div>
+      <div class="col-md-4 text-center">
+        <h4 class="noMargin"><strong>Worst Engine</strong></h4>
+        <h1><span class="label label-warning"><strong>Engine 3</strong></span></h1>
+      </div></div><div class="row">
+      <div ui-grid="flightGrid" class="grid" ui-grid-selection ui-grid-infinite-scroll></div>
+  </div>
+</div>
+</div>
+</div>

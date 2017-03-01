@@ -1,0 +1,36 @@
+<div class="container-fluid text-center">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4">
+      <c3chart bindto-id="flight_cost">
+        <chart-column column-id="Fuel"
+        column-values="170"
+        column-type="donut"/>
+        <chart-column column-id="Salaries"
+        column-values="50"
+        column-type="donut"/>
+        <chart-column column-id="Food"
+        column-values="10"
+        column-type="donut"/>
+        <chart-donut title="Flight costs" width="60"/>
+      </c3chart>
+    </div>
+    <div class="col-sm-4">
+      <c3chart bindto-id="stacked-bar-plot1-chart">
+        <chart-column column-id="data 1"
+        column-name="Recommended fuel costs"
+        column-color="blue"
+        column-values="200,200,200,200,200,200"
+        column-type="bar"/>
+        <chart-column column-id="data 2"
+        column-name="Extra fuel"
+        column-color="red"
+        column-values="50,20,0,40,15,25"
+        column-type="bar"/>
+        <chart-group group-values="data 1,data 2"/>
+      </c3chart>
+    </div>
+    <div class="col-sm-2"></div>
+
+  </div>
+</div>
